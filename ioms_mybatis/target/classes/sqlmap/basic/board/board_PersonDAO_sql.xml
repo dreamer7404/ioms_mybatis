@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    SQL File Name : board_BoardDAO_sql.xml
+    Description : 게시판 화면 데이터를 관리한다.(조회, 등록, 수정, 삭제)
+    author sgyoon
+    since 2020. 09. 03.
+-->
+<mapper namespace="hae.basic.board.dao.PersonDAO">
+
+    <resultMap id="person" type="hae.basic.board.model.Person">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+    </resultMap>
+
+    <select id="selectPersonList"  resultMap="person">
+    <![CDATA[
+        SELECT 
+            ID
+            , NAME
+        FROM PERSON
+    ]]>
+    </select>
+    
+</mapper>

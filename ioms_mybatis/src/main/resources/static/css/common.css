@@ -1,0 +1,136 @@
+html, body {font-family: MalgunGothic, '맑은 고딕','돋움', Dotum; font-size: 15px; line-height: 1; color: #333; margin:0; height:100%}
+a{vertical-align:middle; text-decoration:none;color:#000;}
+a:hover {color:#000; text-decoration:none !important;}
+a.link { text-decoration:none !important;}
+
+input,select {margin:0;padding:0; font-size: 15px;}
+input.w50 {width:50%;}
+input.w100 {width:100%;}
+input.name {width:140px;}
+textarea.w100 {width:100%;}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #0086C5;
+  width:100px;
+  color: white;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  border-radius:5px;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+ .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 6px 8px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover .dropbtn {
+  background-color: #0086C5;
+}
+
+/* MessageSource */
+.message_info { line-height:30px; font-size:15px;}
+.tbl-ex2{
+         margin:10px auto 0px auto;
+         width:100%;
+         min-width:950px;
+         max-width:1380px;
+}
+.tbl-ex{
+         margin:10px auto 0px auto;
+         width:100%;
+         min-width:950px;
+         max-width:1380px;
+}
+.tbl-ex, .tbl-ex th , .tbl-ex td{
+		 border-collapse: collapse;
+         padding:6px;
+}
+.tbl-ex th{
+	 	 border-top:1px solid #8191AC;
+         border-width: 1px 0;
+         background-color: #EEF3FB;
+         font-size: 1.1em;
+         border-width:2px 0;
+}
+.tbl-ex td{
+		 border-top:1px solid #8191AC;
+         border-width: 1px 0;
+         border-style:dotted;
+}
+.tbl-ex tr:hover td{
+         background-color: #cccccc;
+         cursor : pointer;
+}
+.button {
+    width:80px;
+    background-color: #0086C5;
+    border: none;
+    color:#fff;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px;
+    cursor: pointer;
+    border-radius:5px;
+}
+
+.info_text {padding:20px 0 10px 0;}
+
+.tbl_view01 { margin:10px auto 0px auto;
+		      width:100%;
+         	  min-width:950px;
+         	  max-width:1380px;
+			  border-top:2px solid #3479d4;border-bottom:1px solid #a6b3c4;}
+.tbl_view01.tbl_top {border-bottom:1px solid #d5d5d5;}
+.tbl_view01.tbl_bot {border-top:0px;border-top:1px solid #d8d9db; margin-top:20px;}
+.tbl_view01 tbody th {padding:13px 18px 11px 18px; color:#555; border-left:0; border-right:1px solid #d5d5d5; border-bottom:1px solid #d5d5d5; text-align:left; vertical-align:middle;
+                      background:#f9f9f9;}
+.tbl_view01 tbody th.bg01 {color:#3f5d7f; vertical-align:middle; text-align:center; background:#e6edf7; border-bottom:0;}
+.tbl_view01 tbody th.bline {border-bottom:0;}
+.tbl_view01 tbody th:first-child {border-left:0;}
+.tbl_view01 tbody th.vtop, .tbl_view01 tbody td.vtop {vertical-align:top !important;}
+.tbl_view01 tbody td {padding:13px 18px 11px 18px; border-left:1px solid #d5d5d5; border-left:0; border-right:1px solid #d5d5d5; border-bottom:1px solid #d5d5d5; text-align:left; word-wrap:break-word; vertical-align:top;  background:#fff;}
+.tbl_view01 tr th:first-child {border-left:0; border-right:1px solid #dddddd;}
+.tbl_view01 tr th:last-child {border-left:0; border-right:0;}
+.tbl_view01 tr td:first-child {border-left:0; border-right:1px solid #dddddd;}
+.tbl_view01 tr td:last-child {border-left:0; border-right:0;}
+.tbl_view01 tbody tr:last-child th,.tbl_view01 tbody tr:last-child td {border-bottom:0;}
+.tbl_view01 tbody td.form {padding:8px 18px 8px 18px; vertical-align:middle !important;}
+.tbl_view01 tbody td.form.list > .ck_box {width:180px; padding:7px 0 7px 0;}
+.tbl_view01 tbody td .form_area {float:right; padding-top:5px}
+.tbl_view01 tbody td.form > button {vertical-align:middle;}
+.tbl_view01 tbody td.con01 {padding:8px 18px 8px 18px;}
+.tbl_view01 tbody td .con_text {line-height:18px;}
+.tbl_view01 tbody td.con_file > button {margin-bottom:15px;}
+.tbl_view01 tbody td .cf_text {display:inline-block; color:#999;}
+.tbl_view01 tbody td .text_bbs {height:100px; line-height:18px; overflow-x:hidden; overflow-y:auto;}
+.tbl_view01 tbody td .textarea {height:100px;}
+.tbl_view01 tbody td .file_list {padding:0px 0 0px 10px;}
+.tbl_view01 tbody td .file_list li {position:relative; padding:4px 80px 5px 0;}
+.tbl_view01 tbody td .file_list li > a.btn_file {display:inline-block; margin-right:10px;}
+.tbl_view01 tbody td .file_list li > a.btn_delete {display:inline-block; font-size:0; line-height:0; text-indent:-999px; position:absolute; width:12px; height:12px; background:url('../images/common_h/ico.png') no-repeat -134px 0px;}
+.tbl_view01 tbody td .address_detail {position:relative; margin:0 0 0 0;}
+.tbl_view01 tbody td .address_detail > li {padding:5px 0 5px 0;}
+.tbl_view01 tbody td .address_detail > li > input.post {width:80px;}
+.tbl_view01 tbody td .address_detail > li > input.address {width:680px;}
+.tbl_view01 tbody td .address_detail > li > input.address_detail {width:680px; margin-left:0;}

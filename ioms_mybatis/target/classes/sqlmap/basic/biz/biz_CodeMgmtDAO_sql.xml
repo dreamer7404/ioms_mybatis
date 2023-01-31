@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+    SQL File Name  : biz_CodeMgmtDAO.xml
+    Description    : 설명을 기술합니다.
+    author         : Windows ≫c¿eAU
+    since          : 2023.1.19
+-->
+
+<mapper namespace="hae.basic.biz.dao.CodeMgmtDAO">
+
+    <resultMap id="codemgmtInfo" type="hae.basic.biz.model.CodeMgmt">
+        <result property="dlExpdGCd" column="dl_expd_g_cd" />
+        <result property="dlExpdPrvsCd" column="dl_expd_prvs_cd" />
+        <result property="dlExpdPrvsNm" column="dl_expd_prvs_nm" />
+        <result property="sortSn" column="sort_sn" />
+        <result property="useYn" column="use_yn" />
+        <result property="pprrEeno" column="pprr_eeno" />
+        <result property="framDtm" column="fram_dtm" />
+        <result property="updrEeno" column="updr_eeno" />
+        <result property="mdfyDtm" column="mdfy_dtm" />
+    </resultMap>
+
+
+    <select id="selectCodeMgmt"  resultMap="codemgmtInfo">
+        <![CDATA[
+            SELECT /*  QueryID=hae.basic.biz.CodeMgmtMDAO.selectCodeMgmt */
+                   dl_expd_g_cd,
+                   dl_expd_prvs_cd,
+                   dl_expd_prvs_nm,
+                   sort_sn,
+                   use_yn,
+                   pprr_eeno,
+                   fram_dtm,
+                   updr_eeno,
+                   mdfy_dtm
+              FROM tb_code_mgmt
+             
+        ]]>
+    </select>
+
+   
+    
+    
+    
+
+</mapper>
+

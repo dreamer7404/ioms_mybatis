@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="hae.basic.biz.dao.NatlMgmtDAO">
+
+    <resultMap id="natlmgmt" type="hae.basic.biz.model.NatlMgmt">
+        <result property="dlExpdCoCd" column="dl_expd_co_cd" />
+        <result property="dlExpdNatCd" column="dl_expd_nat_cd" />
+        <result property="dlExpdRegnCd" column="dl_expd_regn_cd" />
+        <result property="natNm" column="nat_nm" />
+        <result property="dytmPlnNatCd" column="dytm_pln_nat_cd" />
+        <result property="prdnMstNatCd" column="prdn_mst_nat_cd" />
+        <result property="pprrEeno" column="pprr_eeno" />
+        <result property="framDtm" column="fram_dtm" />
+        <result property="updrEeno" column="updr_eeno" />
+        <result property="mdfyDtm" column="mdfy_dtm" />
+    </resultMap>
+
+
+    <select id="selectNatlMgmtList"  resultMap="natlmgmt">
+    <![CDATA[
+            SELECT 
+                   dl_expd_co_cd,
+                   dl_expd_nat_cd,
+                   dl_expd_regn_cd,
+                   nat_nm,
+                   dytm_pln_nat_cd,
+                   prdn_mst_nat_cd,
+                   pprr_eeno,
+                   fram_dtm,
+                   updr_eeno,
+                   mdfy_dtm
+              FROM tb_natl_mgmt
+              ]]>
+    </select>
+    
+    
+
+</mapper>
+
