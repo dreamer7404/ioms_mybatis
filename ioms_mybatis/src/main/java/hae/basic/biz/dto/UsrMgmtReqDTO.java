@@ -16,10 +16,10 @@ import lombok.NoArgsConstructor;
  * @see
  */
 
-@Alias("UsrMgmtReqDto")
+@Alias("usrMgmtReqDTO")
 @Data
 @AllArgsConstructor
-public class UsrMgmtReqDto {
+public class UsrMgmtReqDTO extends CommReqDTO {
     private String userEeno;     // USER_EENO(tb_usr_mgmt) : VARCHAR(20)
-    private String userPw;   
+    private String userPw;  
 }

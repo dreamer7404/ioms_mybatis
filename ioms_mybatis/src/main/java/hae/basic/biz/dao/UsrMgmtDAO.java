@@ -2,7 +2,9 @@ package hae.basic.biz.dao;
 
 import java.util.List;
 
-import hae.basic.biz.dto.UsrMgmtResDto;
+import hae.basic.biz.dto.CommReqDTO;
+import hae.basic.biz.dto.UsrMgmtReqDTO;
+import hae.basic.biz.dto.UsrMgmtResDTO;
 import hae.basic.biz.model.UsrMgmt;
 
 /**
@@ -58,7 +60,7 @@ public interface UsrMgmtDAO {
      * @return UsrMgmt
      * @throws Exception
      */
-    UsrMgmtResDto selectUsrMgmt(String id) throws Exception;
+    UsrMgmtResDTO selectUsrMgmt(String id) throws Exception;
 
     /**
      * 
@@ -68,5 +70,5 @@ public interface UsrMgmtDAO {
      * @return List<HMap>
      * @throws Exception
      */
-    List<UsrMgmtResDto> selectUsrMgmtList() throws Exception;
+    List<UsrMgmtResDTO> selectUsrMgmtList(UsrMgmtReqDTO usrMgmtReqDTO) throws Exception;
 }

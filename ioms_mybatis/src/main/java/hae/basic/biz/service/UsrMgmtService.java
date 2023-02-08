@@ -7,7 +7,9 @@ import able.cloud.core.service.HService;
 import org.springframework.stereotype.Service;
 
 import hae.basic.biz.dao.UsrMgmtDAO;
-import hae.basic.biz.dto.UsrMgmtResDto;
+import hae.basic.biz.dto.CommReqDTO;
+import hae.basic.biz.dto.UsrMgmtReqDTO;
+import hae.basic.biz.dto.UsrMgmtResDTO;
 import hae.basic.biz.model.UsrMgmt;
 //import hae.basic.biz.service.UsrMgmtService;
 import lombok.RequiredArgsConstructor;
@@ -62,7 +64,7 @@ public class UsrMgmtService { //Impl  //extends HService implements UsrMgmtServi
      * @see hae.basic.biz.service.UsrMgmtService#selectUsrMgmt(hae.basic.biz.model.UsrMgmt)
      */
 //    @Override
-    public UsrMgmtResDto selectUsrMgmt(String id) throws Exception {
+    public UsrMgmtResDTO selectUsrMgmt(String id) throws Exception {
         return usrMgmtDAO.selectUsrMgmt(id);
     }
 
@@ -70,7 +72,7 @@ public class UsrMgmtService { //Impl  //extends HService implements UsrMgmtServi
      * @see hae.basic.biz.service.UsrMgmtService#selectUsrMgmtList(hae.basic.biz.model.UsrMgmt)
      */
 //    @Override
-    public List<UsrMgmtResDto> selectUsrMgmtList() throws Exception {
-        return usrMgmtDAO.selectUsrMgmtList();
+    public List<UsrMgmtResDTO> selectUsrMgmtList(UsrMgmtReqDTO usrMgmtReqDTO) throws Exception {
+        return usrMgmtDAO.selectUsrMgmtList(usrMgmtReqDTO);
     }
 }

@@ -13,7 +13,7 @@
         Query Name  : hae.basic.biz.UsrMgmtDAO.selectUsrMgmt
         Description : 
     --> 
-    <select id="hae.basic.biz.dao.UsrMgmtDAO.selectUsrMgmt" parameterType="UsrMgmtReqDto" resultType="UsrMgmtResDto">
+    <select id="hae.basic.biz.dao.UsrMgmtDAO.selectUsrMgmt" parameterType="usrMgmtReqDto" resultType="usrMgmtResDto">
         <![CDATA[
             SELECT /*  QueryID=hae.basic.biz.UsrMgmtDAO.selectUsrMgmt */
                    user_eeno    AS userEeno,
@@ -43,29 +43,29 @@
         Query Name  : hae.basic.biz.UsrMgmtDAO.selectUsrMgmtList
         Description : 
     --> 
-    <select id="hae.basic.biz.dao.UsrMgmtDAO.selectUsrMgmtList"  resultType="UsrMgmtResDto">
-        <![CDATA[
-            SELECT /* QueryID=hae.basic.biz.UsrMgmtDAO.selectUsrMgmtList */
-                  user_eeno    AS userEeno,
-                   user_nm      AS userNm,
-                   blns_co_cd   AS blnsCoCd,
-                   user_dcd     AS userDcd,
-                   user_eml_adr AS userEmlAdr,
-                   use_yn       AS useYn,
-                   pprr_eeno    AS pprrEeno,
-                   fram_dtm     AS framDtm,
-                   updr_eeno    AS updrEeno,
-                   mdfy_dtm     AS mdfyDtm,
-                   pw_altr_dtm  AS pwAltrDtm,
-                   fin_lgi_dtm  AS finLgiDtm,
-                   pw_lock_dtm  AS pwLockDtm,
-                   pw_err_oft   AS pwErrOft,
-                   user_chg_pw  AS userChgPw,
-                   grp_cd       AS grpCd,
-                   user_oset_lgi AS userOsetLgi,
-                   use_gbn      AS useGbn
-              FROM tb_usr_mgmt
-        ]]>
+    <select id="hae.basic.biz.dao.UsrMgmtDAO.selectUsrMgmtList" parameterType="usrMgmtReqDTO"  resultType="usrMgmtResDTO">
+        SELECT 
+              user_eeno    AS userEeno,
+               user_nm      AS userNm,
+               blns_co_cd   AS blnsCoCd,
+               user_dcd     AS userDcd,
+               user_eml_adr AS userEmlAdr,
+               use_yn       AS useYn,
+               pprr_eeno    AS pprrEeno,
+               fram_dtm     AS framDtm,
+               updr_eeno    AS updrEeno,
+               mdfy_dtm     AS mdfyDtm,
+               pw_altr_dtm  AS pwAltrDtm,
+               fin_lgi_dtm  AS finLgiDtm,
+               pw_lock_dtm  AS pwLockDtm,
+               pw_err_oft   AS pwErrOft,
+               user_chg_pw  AS userChgPw,
+               grp_cd       AS grpCd,
+               user_oset_lgi AS userOsetLgi,
+               use_gbn      AS useGbn
+          FROM tb_usr_mgmt
+        <if test="orderBy != null"> ORDER BY ${orderBy} </if>
+        <if test="pageNo != null and pageSize != null"> LIMIT #{pageNo}, #{pageSize} </if>
     </select>
     
     
@@ -73,7 +73,7 @@
         Query Name  : hae.basic.biz.UsrMgmtMDAO.insertUsrMgmt
         Description : 
     -->
-    <insert id="hae.basic.biz.dao.UsrMgmtDAO.insertUsrMgmt" parameterType="UsrMgmt">
+    <insert id="hae.basic.biz.dao.UsrMgmtDAO.insertUsrMgmt" parameterType="usrMgmtReqDTO">
         <![CDATA[
             INSERT /* QueryID=hae.basic.biz.UsrMgmtDAO.insertUsrMgmt */ 
               INTO tb_usr_mgmt
@@ -123,7 +123,7 @@
         Query Name  : hae.basic.biz.UsrMgmtDAO.updateUsrMgmt
         Description : 
     -->    
-    <update id="hae.basic.biz.dao.UsrMgmtDAO.updateUsrMgmt" parameterType="UsrMgmt">
+    <update id="hae.basic.biz.dao.UsrMgmtDAO.updateUsrMgmt" parameterType="usrMgmtReqDTO">
         <![CDATA[
             UPDATE /* QueryID=hae.basic.biz.UsrMgmtDAO.updateUsrMgmt */
                    tb_usr_mgmt
@@ -153,7 +153,7 @@
         Query Name  : hae.basic.biz.UsrMgmtDAO.deleteUsrMgmt
         Description : 
     -->   
-    <delete id="hae.basic.biz.dao.UsrMgmtDAO.deleteUsrMgmt" parameterType="UsrMgmt">
+    <delete id="hae.basic.biz.dao.UsrMgmtDAO.deleteUsrMgmt" parameterType="String">
         <![CDATA[
             DELETE /* QueryID=hae.basic.biz.UsrMgmtDAO.deleteUsrMgmt */ 
               FROM tb_usr_mgmt

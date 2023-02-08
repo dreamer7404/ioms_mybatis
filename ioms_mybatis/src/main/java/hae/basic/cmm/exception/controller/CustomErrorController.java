@@ -1,6 +1,6 @@
 package hae.basic.cmm.exception.controller;
 
-import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -64,13 +64,17 @@ public class CustomErrorController extends BasicErrorController {
    public ModelAndView errorHtml(HttpServletRequest request, HttpServletResponse response) {
        //logger.info("CustomErrorController errorHtml : 여기에 공통로그 처리 만들면 됩니다.");
        //logger(request); // 로그 추가
-       HttpStatus status = getStatus(request);
-       Map<String, Object> model = Collections
-               .unmodifiableMap(getErrorAttributes(request, getErrorAttributeOptions(request, MediaType.TEXT_HTML)));
-       response.setStatus(status.value());
-       ModelAndView modelAndView = resolveErrorView(request, response, status, model);
-       return (modelAndView != null) ? modelAndView : new ModelAndView("common/defaultErrorView", model);
+//       HttpStatus status = getStatus(request);
+//       Map<String, Object> model = Collections
+//               .unmodifiableMap(getErrorAttributes(request, getErrorAttributeOptions(request, MediaType.TEXT_HTML)));
+//       response.setStatus(status.value());
+//       ModelAndView modelAndView = resolveErrorView(request, response, status, model);
+//       return (modelAndView != null) ? modelAndView : new ModelAndView("common/defaultErrorView", model);
+       return new ModelAndView("/index", new HashMap<String, Object>());
    }
+   
+   
+
 
    /**
     * error 함수 안에 공통으로 처리 할 로직을 구현한다.
@@ -103,5 +107,7 @@ public class CustomErrorController extends BasicErrorController {
    private void logger(HttpServletRequest request) {
        logger.error("CustomErrorController error {}", request.getServletPath());
    }
+   
+ 
 
 }

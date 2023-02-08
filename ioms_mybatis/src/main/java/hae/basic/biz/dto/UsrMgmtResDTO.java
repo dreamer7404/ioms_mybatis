@@ -16,10 +16,10 @@ import lombok.Data;
  * @since 2023. 1. 31.
  * @see
  */
-@Alias("UsrMgmtResDto")
+@Alias("usrMgmtResDTO")
 @Data
 @AllArgsConstructor
-public class UsrMgmtResDto {
+public class UsrMgmtResDTO {
     private String userEeno;     // USER_EENO(tb_usr_mgmt) : VARCHAR(20)
     private String userNm;     // USER_NM(tb_usr_mgmt) : VARCHAR(50)
     private String blnsCoCd;     // BLNS_CO_CD(tb_usr_mgmt) : VARCHAR(4)
