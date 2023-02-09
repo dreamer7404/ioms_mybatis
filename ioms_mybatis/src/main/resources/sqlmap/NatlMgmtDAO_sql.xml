@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+    SQL File Name  : biz_NatlMgmtDAO.xml
+    Description    : 설명을 기술합니다.
+    author         : 안경수
+    since          : 2023.1.19
+-->
+
+<mapper namespace="com.oms.dao.NatlMgmtDAO">
+
+    <select id="selectNatlMgmtList"  resultType="natlMgmtResDTO">
+    <![CDATA[
+            SELECT 
+                   dl_expd_co_cd    AS dlExpdCoCd,
+                   dl_expd_nat_cd   AS dlExpdNatCd,
+                   dl_expd_regn_cd  AS dlExpdRegnCd,
+                   nat_nm           AS natNm,
+                   dytm_pln_nat_cd  AS dytmPlnNatCd,
+                   prdn_mst_nat_cd  AS prdnMstNatCd,
+                   pprr_eeno        AS pprrEeno,
+                   fram_dtm         AS framDtm,
+                   updr_eeno        AS updrEeno,
+                   mdfy_dtm         AS mdfyDtm
+              FROM tb_natl_mgmt
+              ]]>
+    </select>
+    
+    
+
+</mapper>
+

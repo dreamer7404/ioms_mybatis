@@ -3,19 +3,21 @@
 <!-- 
     SQL File Name  : biz_UsrMgmtDAO.xml
     Description    : 설명을 기술합니다.
-    author         : Windows ≫c¿eAU
+    author         : 안경수
     since          : 2023.1.19
 -->
 
-<mapper namespace="hae.basic.biz.dao.UsrMgmtDAO">
+<mapper namespace="com.oms.dao.UsrMgmtDAO">
    
-    <!--
-        Query Name  : hae.basic.biz.UsrMgmtDAO.selectUsrMgmt
+   <!--
+        Query Name  : com.oms.dao.UsrMgmtDAO.selectUsrMgmt
         Description : 
     --> 
-    <select id="hae.basic.biz.dao.UsrMgmtDAO.selectUsrMgmt" parameterType="usrMgmtReqDto" resultType="usrMgmtResDto">
+    <select id="com.oms.dao.UsrMgmtDAO.selectUsrMgmt" parameterType="usrMgmtReqDTO" resultType="usrMgmtResDTO">
         <![CDATA[
-            SELECT /*  QueryID=hae.basic.biz.UsrMgmtDAO.selectUsrMgmt */
+        /*  QueryID=com.oms.dao.UsrMgmtDAO.selectUsrMgmt */
+        
+            SELECT 
                    user_eeno    AS userEeno,
                    user_nm      AS userNm,
                    blns_co_cd   AS blnsCoCd,
@@ -40,10 +42,12 @@
     </select>
 
     <!--
-        Query Name  : hae.basic.biz.UsrMgmtDAO.selectUsrMgmtList
+        Query Name  : com.oms.dao.UsrMgmtDAO.selectUsrMgmtList
         Description : 
     --> 
-    <select id="hae.basic.biz.dao.UsrMgmtDAO.selectUsrMgmtList" parameterType="usrMgmtReqDTO"  resultType="usrMgmtResDTO">
+    <select id="com.oms.dao.UsrMgmtDAO.selectUsrMgmtList" parameterType="usrMgmtReqDTO"  resultType="usrMgmtResDTO">
+        <![CDATA[
+        /*  QueryID=com.oms.dao.UsrMgmtDAO.selectUsrMgmtList */
         SELECT 
               user_eeno    AS userEeno,
                user_nm      AS userNm,
@@ -64,18 +68,28 @@
                user_oset_lgi AS userOsetLgi,
                use_gbn      AS useGbn
           FROM tb_usr_mgmt
-        <if test="orderBy != null"> ORDER BY ${orderBy} </if>
-        <if test="pageNo != null and pageSize != null"> LIMIT #{pageNo}, #{pageSize} </if>
+           ]]>
+        <trim prefix="ORDER BY">
+            <if test="orderBy != null and orderBy != ''"> 
+                 ${orderBy} 
+            </if>
+        </trim>
+        <trim prefix="LIMIT">
+            <if test="pageNo != null and pageNo != '' and pageSize != null and pageSize != ''"> 
+                 #{pageNo}, #{pageSize} 
+            </if>
+        </trim>
+       
     </select>
     
     
     <!--
-        Query Name  : hae.basic.biz.UsrMgmtMDAO.insertUsrMgmt
+        Query Name  : com.oms.dao.UsrMgmtDAO.insertUsrMgmt
         Description : 
     -->
-    <insert id="hae.basic.biz.dao.UsrMgmtDAO.insertUsrMgmt" parameterType="usrMgmtReqDTO">
+    <insert id="com.oms.dao.UsrMgmtDAO.insertUsrMgmt" parameterType="usrMgmtReqDTO">
         <![CDATA[
-            INSERT /* QueryID=hae.basic.biz.UsrMgmtDAO.insertUsrMgmt */ 
+            INSERT /* QueryID=com.oms.UsrMgmtDAO.insertUsrMgmt */ 
               INTO tb_usr_mgmt
                    (user_eeno,
                    user_pw,
@@ -120,12 +134,13 @@
 
 
     <!--
-        Query Name  : hae.basic.biz.UsrMgmtDAO.updateUsrMgmt
+        Query Name  : com.oms.dao.UsrMgmtDAO.updateUsrMgmt
         Description : 
     -->    
-    <update id="hae.basic.biz.dao.UsrMgmtDAO.updateUsrMgmt" parameterType="usrMgmtReqDTO">
+    <update id="com.oms.dao.UsrMgmtDAO.updateUsrMgmt" parameterType="usrMgmtReqDTO">
         <![CDATA[
-            UPDATE /* QueryID=hae.basic.biz.UsrMgmtDAO.updateUsrMgmt */
+        /* QueryID=com.oms.dao.UsrMgmtDAO.updateUsrMgmt */
+            UPDATE 
                    tb_usr_mgmt
                SET user_pw = #{userPw},
                    user_nm = #{userNm},
@@ -150,12 +165,13 @@
     </update>
 
     <!--
-        Query Name  : hae.basic.biz.UsrMgmtDAO.deleteUsrMgmt
+        Query Name  : com.oms.UsrMgmtDAO.deleteUsrMgmt
         Description : 
     -->   
-    <delete id="hae.basic.biz.dao.UsrMgmtDAO.deleteUsrMgmt" parameterType="String">
+    <delete id="com.oms.dao.UsrMgmtDAO.deleteUsrMgmt" parameterType="String">
         <![CDATA[
-            DELETE /* QueryID=hae.basic.biz.UsrMgmtDAO.deleteUsrMgmt */ 
+        /* QueryID=com.oms.dao.UsrMgmtDAO.deleteUsrMgmt */ 
+            DELETE 
               FROM tb_usr_mgmt
              WHERE user_eeno = #{userEeno}
         ]]>

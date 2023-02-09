@@ -1,10 +1,10 @@
-package hae.basic;
+package com.oms;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AbleBaseMybatisApplicationTests {
+class ApplicationTests {
 
 	@Test
 	void contextLoads() {
