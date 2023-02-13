@@ -19,6 +19,7 @@
         
             SELECT 
                    user_eeno    AS userEeno,
+                   user_pw       AS userPw,
                    user_nm      AS userNm,
                    blns_co_cd   AS blnsCoCd,
                    user_dcd     AS userDcd,
@@ -50,6 +51,7 @@
         /*  QueryID=com.oms.dao.UsrMgmtDAO.selectUsrMgmtList */
         SELECT 
               user_eeno    AS userEeno,
+              user_pw       AS userPw,
                user_nm      AS userNm,
                blns_co_cd   AS blnsCoCd,
                user_dcd     AS userDcd,
