@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkhkom_front=self.webpackChunkhkom_front||[]).push([[499],{6499:function(n,r,e){e.r(r);e(72791);var t=e(80184);r.default=function(){return(0,t.jsx)("div",{children:"Dashboard..."})}}}]);
+//# sourceMappingURL=499.2c2dabf8.chunk.js.map
