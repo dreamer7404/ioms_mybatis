@@ -2,8 +2,6 @@ package com.oms.cmm.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -11,13 +9,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.firewall.DefaultHttpFirewall;
 import org.springframework.security.web.firewall.HttpFirewall;
 
-import com.oms.cmm.security.JwtAuthenticationFilter;
 import com.oms.cmm.security.JwtTokenProvider;
-import com.oms.service.security.CustomUserDetailsService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -35,7 +30,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     
-//    private final CustomUserDetailsService customUserDetailsService;
     private final JwtTokenProvider jwtTokenProvider;
 
 //    @Override
@@ -71,13 +65,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //        
 //    }
     
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.userDetailsService(customUserDetailsService);
-//    }
-
-    
-    
     
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -99,12 +86,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .and()
         .authorizeHttpRequests().antMatchers(resources).permitAll()
 //        .anyRequest().hasRole(role)
-        
-        // UsernamePasswordAuthenticationFilter 에 도달하기 전에 커스텀한 필터를 먼저 동작시킴
-//        .and()
-//        .addFilterBefore(new JwtAuthenticationFilter(jwtTokenProvider), 
-//                UsernamePasswordAuthenticationFilter.class)
-        
         ;
     
     }

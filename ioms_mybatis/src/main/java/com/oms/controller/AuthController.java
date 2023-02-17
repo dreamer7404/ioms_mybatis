@@ -17,7 +17,6 @@ import com.oms.dao.UsrLogin;
 import com.oms.dto.req.UsrMgmtReqDTO;
 import com.oms.dto.res.UsrMgmtResDTO;
 import com.oms.service.UsrMgmtService;
-import com.oms.service.security.CustomUserDetailsService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -36,8 +35,6 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/api")
 public class AuthController extends HController {
-    
-    private final CustomUserDetailsService userDetailsService;
     
     private final UsrMgmtService usrMgmtService;
     
@@ -96,17 +93,10 @@ public class AuthController extends HController {
         return resultMap;
     }
     
-    
-    /*
-     * @AuthenticationPrincipal
-     *  - 로그인 세션 정보를 애노테이션으로 간편하게 받을 수 있다
-     *  - UserDetailsService에서 Return한 객체를 파라미터로 직접 받아 사용할 수 있다.
-     *  - name 뿐만 아니라 다양한 정보를 받을 수 있다
-     */
     @PostMapping("/auth/login")
     public Long login(@RequestBody UsrMgmtReqDTO usrMgmtReqDTO,HttpServletRequest request) throws Exception {
         
-        // db
+        // get from db
         UsrMgmtResDTO usrMgmtResDTO = usrMgmtService.selectUsrMgmt(usrMgmtReqDTO.getUserEeno());
         if(usrMgmtResDTO == null) {
             return -1L;

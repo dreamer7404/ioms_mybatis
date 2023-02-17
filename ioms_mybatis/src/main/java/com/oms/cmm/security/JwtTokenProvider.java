@@ -37,7 +37,7 @@ public class JwtTokenProvider {
     private String secretKey  = "omsSecretKey";
     
     private final long tokenValidTime = 60 * 60 * 1000L; // 1시간
-    private final UserDetailsService userDetailsService;
+//    private final UserDetailsService userDetailsService;
     
     @PostConstruct
     protected void init() {
@@ -59,10 +59,10 @@ public class JwtTokenProvider {
     }
 
     // JWT 토큰에서 인증 정보 조회
-    public Authentication getAuthentication(String token) {
-        UserDetails userDetails = userDetailsService.loadUserByUsername(this.getUserPk(token));
-        return new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-    }
+//    public Authentication getAuthentication(String token) {
+//        UserDetails userDetails = userDetailsService.loadUserByUsername(this.getUserPk(token));
+//        return new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+//    }
 
     // 토큰에서 회원 정보 추출
     public String getUserPk(String token) {
